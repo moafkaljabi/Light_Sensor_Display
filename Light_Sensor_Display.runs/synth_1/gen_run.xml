@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1759865678">
+<GenRun Id="synth_1" LaunchPart="xck26-sfvc784-2LV-c" LaunchTime="1759874623" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ambient_light_display.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="ambient_light_display_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="ambient_light_display.dcp"/>
   <File Type="RDS-UTIL-PB" Name="ambient_light_display_utilization_synth.pb"/>
@@ -55,6 +55,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/ambient_light_display.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

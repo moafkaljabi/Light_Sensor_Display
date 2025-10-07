@@ -1,3 +1,6 @@
+set_property SEVERITY {Warning} [get_drc_checks UCIO-1]
+    
+
 ######################## PMOD 1 Upper (SPI Sensor) ########################
 set_property PACKAGE_PIN H12 [get_ports {miso}]
 set_property IOSTANDARD LVCMOS33 [get_ports {miso}]

@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Tue Oct  7 21:43:24 2025
-# Process ID         : 161729
+# Start of session at: Wed Oct  8 00:09:13 2025
+# Process ID         : 238216
 # Current directory  : /home/moafk/Documents/FPGA/Kria_Projects/Light_Sensor_Display/Light_Sensor_Display.runs/impl_1
 # Command line       : vivado -log ambient_light_display.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ambient_light_display.tcl -notrace
 # Log file           : /home/moafk/Documents/FPGA/Kria_Projects/Light_Sensor_Display/Light_Sensor_Display.runs/impl_1/ambient_light_display.vdi
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 24.04.3 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-3615QM CPU @ 2.30GHz
-# CPU Frequency      : 2794.566 MHz
+# CPU Frequency      : 3093.629 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 8228 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 12523 MB
-# Available Virtual  : 5167 MB
+# Available Virtual  : 1291 MB
 #-----------------------------------------------------------
 source ambient_light_display.tcl -notrace
