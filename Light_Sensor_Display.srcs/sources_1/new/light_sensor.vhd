@@ -4,7 +4,7 @@
 -- Engineer: Moafk Aljabi
 -- 
 -- Create Date: 06/09/2025 10:52:13 PM
--- Module Name: ambient_light_sensor.vhd
+-- Module Name: light_sensor.vhd
 -- Design Name: 
 -- Module Name: light_sensor - Behavioral
 -- Project Name: 
@@ -37,7 +37,7 @@ ENTITY light_sensor IS
         als_data    :   OUT     STD_LOGIC_VECTOR(7 DOWNTO 0));      --ambient light sensor data
 END light_sensor;
 
-ARCHITECTURE Behavioral OF ambient_light_sensor IS
+ARCHITECTURE Behavioral OF light_sensor IS
     SIGNAL   spi_rx_data    : STD_LOGIC_VECTOR(15 DOWNTO 0);    --latest data received by SPI
 
     --declare SPI Master component

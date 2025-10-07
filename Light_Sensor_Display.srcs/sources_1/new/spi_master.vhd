@@ -6,8 +6,8 @@
 -- Create Date: 06/09/2025 10:52:13 PM
 -- Design Name: 
 -- Module Name: spi_master - Implementation
--- Project Name: 
--- Target Devices: 
+-- Target Devices: Kr260
+-- Tool Versions: Vivado 2025.1
 -- Tool Versions: 
 -- Description: 
 -- 
