@@ -1,5 +1,18 @@
+
+
+# --- clk and reset_n (kept unconstrained LOC-wise for PL overlay,
+#     but explicit IOSTANDARD set to avoid NSTD-1) ---
+set_property IOSTANDARD LVCMOS33 [get_ports {clk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {reset_n}]
+
+# --- Downgrade UCIO-1 (unconstrained LOC) to Warning so PL overlays can be built ---
 set_property SEVERITY {Warning} [get_drc_checks UCIO-1]
-    
+
+# Optional: If you prefer to also downgrade unspecified IO standard checks (less explicit),
+# uncomment the next line instead of (or in addition to) setting IOSTANDARD above:
+# set_property SEVERITY {Warning} [get_drc_checks NSTD-1]
+
+
 
 ######################## PMOD 1 Upper (SPI Sensor) ########################
 set_property PACKAGE_PIN H12 [get_ports {miso}]
