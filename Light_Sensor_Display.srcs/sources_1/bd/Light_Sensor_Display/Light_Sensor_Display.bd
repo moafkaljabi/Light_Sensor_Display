@@ -5,6 +5,7 @@
       "device": "xck26-sfvc784-2LV-c",
       "gen_directory": "../../../../Light_Sensor_Display.gen/sources_1/bd/Light_Sensor_Display",
       "name": "Light_Sensor_Display",
+      "pfm_name": "xilinx:kr260_som:kr260_als_display:0.0",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2025.1",
@@ -12,7 +13,8 @@
     },
     "design_tree": {
       "zynq_ultra_ps_e_0": "",
-      "ambient_light_display_0": ""
+      "ambient_light_display_0": "",
+      "proc_sys_reset_0": ""
     },
     "ports": {
       "pl_clk0_0": {
@@ -1092,11 +1094,8 @@
           "PSU__LPD_SLCR__CSUPMU__ACT_FREQMHZ": {
             "value": "100.000000"
           },
-          "PSU__MAXIGP0__DATA_WIDTH": {
-            "value": "128"
-          },
-          "PSU__MAXIGP1__DATA_WIDTH": {
-            "value": "128"
+          "PSU__MAXIGP2__DATA_WIDTH": {
+            "value": "32"
           },
           "PSU__OVERRIDE__BASIC_CLOCK": {
             "value": "0"
@@ -1282,17 +1281,17 @@
             "value": "1"
           },
           "PSU__USE__M_AXI_GP0": {
-            "value": "1"
+            "value": "0"
           },
           "PSU__USE__M_AXI_GP1": {
-            "value": "1"
+            "value": "0"
           },
           "PSU__USE__M_AXI_GP2": {
-            "value": "0"
+            "value": "1"
           }
         },
         "interface_ports": {
-          "M_AXI_HPM0_FPD": {
+          "M_AXI_HPM0_LPD": {
             "bd_attributes": {
               "TYPE": {
                 "value": "END_POINT",
@@ -1303,24 +1302,8 @@
             "mode": "Master",
             "address_space_ref": "Data",
             "base_address": {
-              "minimum": "0xA0000000",
-              "maximum": "0x0047FFFFFFFF",
-              "width": "40"
-            }
-          },
-          "M_AXI_HPM1_FPD": {
-            "bd_attributes": {
-              "TYPE": {
-                "value": "END_POINT",
-                "value_src": "auto"
-              }
-            },
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "mode": "Master",
-            "address_space_ref": "Data",
-            "base_address": {
-              "minimum": "0xB0000000",
-              "maximum": "0x007FFFFFFFFF",
+              "minimum": "0x80000000",
+              "maximum": "0x9FFFFFFF",
               "width": "40"
             }
           }
@@ -1394,6 +1377,9 @@
               }
             }
           }
+        },
+        "pfm_attributes": {
+          "CLOCK": "pl_clk0 {id \"0\" is_default \"true\" proc_sys_reset \"/proc_sys_reset_0\" status \"fixed\" freq_hz \"99999001\"}"
         }
       },
       "ambient_light_display_0": {
@@ -1449,6 +1435,14 @@
             "right": "0"
           }
         }
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "17",
+        "xci_name": "Light_Sensor_Display_proc_sys_reset_0_0",
+        "xci_path": "ip/Light_Sensor_Display_proc_sys_reset_0_0/Light_Sensor_Display_proc_sys_reset_0_0.xci",
+        "inst_hier_path": "proc_sys_reset_0",
+        "has_run_ip_tcl": "true"
       }
     },
     "nets": {
@@ -1485,17 +1479,18 @@
       "zynq_ultra_ps_e_0_pl_clk0": {
         "ports": [
           "zynq_ultra_ps_e_0/pl_clk0",
-          "pl_clk0_0",
           "ambient_light_display_0/clk",
-          "zynq_ultra_ps_e_0/maxihpm0_fpd_aclk",
-          "zynq_ultra_ps_e_0/maxihpm1_fpd_aclk"
+          "proc_sys_reset_0/slowest_sync_clk",
+          "zynq_ultra_ps_e_0/maxihpm0_lpd_aclk",
+          "pl_clk0_0"
         ]
       },
       "zynq_ultra_ps_e_0_pl_resetn0": {
         "ports": [
           "zynq_ultra_ps_e_0/pl_resetn0",
           "pl_resetn0_0",
-          "ambient_light_display_0/reset_n"
+          "ambient_light_display_0/reset_n",
+          "proc_sys_reset_0/ext_reset_in"
         ]
       }
     }

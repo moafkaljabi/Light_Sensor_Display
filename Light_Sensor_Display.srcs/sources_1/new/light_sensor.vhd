@@ -68,10 +68,22 @@ BEGIN
   --instantiate and configure the SPI Master component
   spi_master_0:  spi_master
      GENERIC MAP(slaves => 1, d_width => 16)
-     PORT MAP(clock => clk, reset_n => reset_n, enable => '1', cpol => '1',
-           cpha => '1', cont => '0', clk_div => spi_clk_div, addr => 0,
-           tx_data => (OTHERS => '0'), miso => miso, sclk => sclk, ss_n => ss_n,
-           mosi => open, busy => open, rx_data => spi_rx_data);
+     PORT MAP(
+        clock => clk, 
+        reset_n => reset_n, 
+        enable => '1',
+        cpol => '1',
+        cpha => '1',
+        cont => '0',
+        clk_div => spi_clk_div, 
+        addr => 0,
+        tx_data => (OTHERS => '0'),
+        miso => miso, 
+        sclk => sclk,
+        ss_n => ss_n,
+        mosi => open,
+        busy => open,
+        rx_data => spi_rx_data);
 
     als_data <= spi_rx_data(12 DOWNTO 5);   --assign ambient light data bits to output
 
